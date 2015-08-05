@@ -1,19 +1,19 @@
 upstream php5-fpm-sock {
-    server unix:/var/run/php5-fpm.sock;
+    server 127.0.0.1:9000;
 }
 server {
   listen   80;
-  error_log /var/log/nginx/photoshow.log info;
+  error_log /config/log/nginx/photoshow.log info;
   location / {
-    alias /var/www/PhotoShow/;
+    alias /config/www/PhotoShow/;
     index index.php;
     client_max_body_size 0;
 	  location ~* \.php$ {
 		#try_files $uri =404;
 		allow all;
-		include fastcgi_params;
+		include /etc/nginx/fastcgi_params;
 		fastcgi_pass php5-fpm-sock;
-		fastcgi_param SCRIPT_FILENAME /var/www/PhotoShow/$fastcgi_script_name;
+		fastcgi_param SCRIPT_FILENAME /config/www/PhotoShow/$fastcgi_script_name;
 		fastcgi_param QUERY_STRING $query_string;
 		fastcgi_intercept_errors off;
 		client_max_body_size 0;
