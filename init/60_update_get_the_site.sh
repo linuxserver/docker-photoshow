@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cp /defaults/photoshow /config/nginx/site-confs/default
-
 if [ ! -f "/config/www/PhotoShow/config.php" ]; then
+cp /defaults/photoshow /config/nginx/site-confs/default
 echo "fetching photoshow files from github"
 git clone https://github.com/thibaud-rohmer/PhotoShow.git /config/www/PhotoShow
 sed -i -e 's/$config->photos_dir.\+/$config->photos_dir = "\/Pictures";/' /config/www/PhotoShow/config.php
