@@ -32,4 +32,4 @@ RUN chmod -v +x /etc/my_init.d/*.sh
 EXPOSE 80
 
 # set volumes
-VOLUME /Thumbs /Pictures
+VOLUME /config /Thumbs /Pictures 
