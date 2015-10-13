@@ -17,7 +17,6 @@ apt-get install \
 $APTLIST -qy && \
 
 # clean up
-cd / && \
 apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
