@@ -1,9 +1,10 @@
 # set base os
 FROM linuxserver/baseimage.nginx
 
-MAINTAINER Mark Burford <sparklyballs@gmail.com>
+MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
 
 # Set correct environment variables
+ENV APTLIST="ffmpeg git-core php5-gd"
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
 
 # Set the locale
@@ -12,10 +13,9 @@ RUN locale-gen en_US.UTF-8
 # update apt and install dependencies
 RUN add-apt-repository ppa:kirillshkrogalev/ffmpeg-next && \
 apt-get update && \
+apt-get --only-upgrade install $BASE_APTLIST -qy && \
 apt-get install \
-git-core \
-php5-gd \
-ffmpeg -y && \
+$APTLIST -qy && \
 
 # clean up
 cd / && \
@@ -23,13 +23,11 @@ apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Adding Custom files
-ADD defaults/photoshow.fpm /etc/php5/fpm/pool.d/photoshow.conf
-ADD defaults/photoshow.www /defaults/photoshow
+ADD defaults/ /defaults/
 ADD init/ /etc/my_init.d/
-RUN chmod -v +x /etc/my_init.d/*.sh
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
+mv defaults/photoshow.fpm /etc/php5/fpm/pool.d/photoshow.conf
 
-# set ports
+# set volumes and ports
 EXPOSE 80
-
-# set volumes
 VOLUME /config /Thumbs /Pictures 
