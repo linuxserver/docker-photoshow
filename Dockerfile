@@ -13,7 +13,6 @@ RUN locale-gen en_US.UTF-8
 # update apt and install dependencies
 RUN add-apt-repository ppa:kirillshkrogalev/ffmpeg-next && \
 apt-get update && \
-apt-get --only-upgrade install $BASE_APTLIST -qy && \
 apt-get install \
 $APTLIST -qy && \
 
