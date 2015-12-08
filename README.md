@@ -44,5 +44,5 @@ On first run create an admin account, any folder and its subfolders that you map
 
 
 ## Versions
-
++ **21.08.2015:** Use patched keybaord js from fork of photoshow
 + **21.08.2015:** Initial Release. 
