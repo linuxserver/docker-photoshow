@@ -15,7 +15,7 @@ git pull
 fi
 
 # patch in fixed keyboard.js file
-cp /defaults/keyboard.js /config/www/PhotoShow/src/keyboard.js
+cp /defaults/keyboard.js /config/www//PhotoShow/src/js/keyboard.js
 
 sed -i -e "s@\$config->timezone.*@\$config->timezone = \"${TZ}\"@g" /config/www/PhotoShow/config.php
 chown -R abc:abc /config/www/PhotoShow /Thumbs
