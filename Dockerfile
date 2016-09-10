@@ -3,6 +3,9 @@ FROM linuxserver/baseimage.nginx
 
 MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
 
+# copy sources.list
+COPY sources.list /etc/apt/
+
 # Set correct environment variables
 ENV APTLIST="ffmpeg git-core php5-gd"
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
