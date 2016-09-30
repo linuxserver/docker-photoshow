@@ -1,34 +1,22 @@
-# set base os
-FROM linuxserver/baseimage.nginx
+FROM lsiobase/alpine.nginx
+MAINTAINER Sparklyballs
 
-MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
+# install packages
+RUN \
+ apk add --no-cache \
+	ffmpeg \
+	php5-gd && \
 
-# copy sources.list
-COPY sources.list /etc/apt/
+# configure php
+echo "[www]" >> /defaults/nginx-fpm.conf && \
+echo "php_admin_value[upload_max_filesize] = 10M" >> /defaults/nginx-fpm.conf && \
+echo "php_admin_value[post_max_size] = 10M" >> /defaults/nginx-fpm.conf && \
+echo "php_admin_value[memory_limit] = 64M" >> /defaults/nginx-fpm.conf && \
+echo "php_admin_value[max_execution_time] = 15" >> /defaults/nginx-fpm.conf
 
-# Set correct environment variables
-ENV APTLIST="ffmpeg git-core php5-gd"
-ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
+# add local files
+COPY root/ /
 
-# Set the locale
-RUN locale-gen en_US.UTF-8
-
-# update apt and install dependencies
-RUN add-apt-repository ppa:kirillshkrogalev/ffmpeg-next && \
-apt-get update && \
-apt-get install \
-$APTLIST -qy && \
-
-# clean up
-apt-get clean -y && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-#Adding Custom files
-ADD defaults/ /defaults/
-ADD init/ /etc/my_init.d/
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh && \
-mv defaults/photoshow.fpm /etc/php5/fpm/pool.d/photoshow.conf
-
-# set volumes and ports
+# ports and volumes
 EXPOSE 80
-VOLUME /config /Thumbs /Pictures 
+VOLUME /config /Thumbs /Pictures

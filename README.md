@@ -24,7 +24,6 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 ```
 docker create \
 --name=photoshow \
--v /etc/localtime:/etc/localtime:ro \
 -v <path to data>:/config \
 -v <path to pictures>:/Pictures:ro \
 -v <path to store thumbs>:/Thumbs \
@@ -37,7 +36,6 @@ linuxserver/photoshow
 **Parameters**
 
 * `-p 80` - port for the webui
-* `-v /etc/localtime` for timesync - *optional*
 * `-v /config` - stores config and logs for nginx base
 * `-v /Pictures` - your local folder of photos you wish to share
 * `-v /Thumbs` - local folder to store thumbnails of your images
@@ -45,7 +43,7 @@ linuxserver/photoshow
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` - for timezone information *eg Europe/London, etc*
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it photoshow /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it photoshow /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -63,13 +61,14 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 On first run create an admin account, any folder and its subfolders that you map to /Pictures will be presented as a webgallery. Config settings are persistent and stored as a subfolder of the /Thumbs mapping. 
 
 
-## Updates
+## Info
 
-* Upgrade to the latest version simply `docker restart photoshow`.
 * To monitor the logs of the container in realtime `docker logs -f photoshow`.
 
 
 ## Versions
+
++ **30.09.16:** Rebase to alpine linux. 
 + **11.09.16:** Add layer badges to README. 
 + **21.08.15:** Use patched keybaord js from fork of photoshow
 + **21.08.15:** Initial Release. 
