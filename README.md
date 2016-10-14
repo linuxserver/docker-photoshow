@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/photoshow
-[![](https://images.microbadger.com/badges/image/linuxserver/photoshow.svg)](http://microbadger.com/images/linuxserver/photoshow "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/photoshow.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/photoshow.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-photoshow)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-photoshow/)
+[![](https://images.microbadger.com/badges/version/linuxserver/photoshow.svg)](https://microbadger.com/images/linuxserver/photoshow "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/photoshow.svg)](http://microbadger.com/images/linuxserver/photoshow "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/photoshow.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/photoshow.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-photoshow)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-photoshow/)
 [hub]: https://hub.docker.com/r/linuxserver/photoshow/
 
 [Photoshow][photoshowurl] is gallery software at its easiest, it doesn't even require a database. 
@@ -66,8 +66,17 @@ On first run create an admin account, any folder and its subfolders that you map
 * To monitor the logs of the container in realtime `docker logs -f photoshow`.
 
 
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' photoshow`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/photoshow`
+
 ## Versions
 
++ **14-10-16:** Add version layer information.
 + **30.09.16:** Rebase to alpine linux. 
 + **11.09.16:** Add layer badges to README. 
 + **21.08.15:** Use patched keybaord js from fork of photoshow
