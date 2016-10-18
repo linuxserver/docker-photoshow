@@ -82,7 +82,7 @@ On first run create an admin account, any folder and its subfolders that you map
 
 ## Versions
 
-+ **14-10-16:** Add version layer information.
++ **14.10.16:** Add version layer information.
 + **30.09.16:** Rebase to alpine linux. 
 + **11.09.16:** Add layer badges to README. 
 + **21.08.15:** Use patched keybaord js from fork of photoshow
