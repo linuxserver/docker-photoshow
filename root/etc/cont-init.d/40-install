@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
+
+# fix for linting
+declare config
 
 THUMBS="/Thumbs"
 PICTURES="/Pictures"
