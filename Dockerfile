@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx
+FROM lsiobase/alpine.nginx:3.5
 MAINTAINER Sparklyballs
 
 # set version label
@@ -9,15 +9,16 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 # install packages
 RUN \
  apk add --no-cache \
+	imagemagick \
 	ffmpeg \
-	php5-gd && \
+	php7-gd && \
 
 # configure php
-echo "[www]" >> /defaults/nginx-fpm.conf && \
-echo "php_admin_value[upload_max_filesize] = 10M" >> /defaults/nginx-fpm.conf && \
-echo "php_admin_value[post_max_size] = 10M" >> /defaults/nginx-fpm.conf && \
-echo "php_admin_value[memory_limit] = 64M" >> /defaults/nginx-fpm.conf && \
-echo "php_admin_value[max_execution_time] = 15" >> /defaults/nginx-fpm.conf
+echo "[www]" >> /etc/php7/php-fpm.conf && \
+echo "php_admin_value[upload_max_filesize] = 10M" >> /etc/php7/php-fpm.conf && \
+echo "php_admin_value[post_max_size] = 10M" >> /etc/php7/php-fpm.conf && \
+echo "php_admin_value[memory_limit] = 64M" >> /etc/php7/php-fpm.conf && \
+echo "php_admin_value[max_execution_time] = 15" >> /etc/php7/php-fpm.conf
 
 # add local files
 COPY root/ /
