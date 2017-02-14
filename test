@@ -1,1 +1,0 @@
-$config->imagemagick_path = '/usr/bin/convert' ;
