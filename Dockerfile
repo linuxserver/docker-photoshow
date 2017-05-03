@@ -6,17 +6,20 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-# install packages
+# add repositories
 RUN \
+ echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+ echo "@community http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+
+# install packages
  apk add --no-cache \
-	imagemagick \
 	ffmpeg && \
  apk add --no-cache \
-	--repository http://nl.alpinelinux.org/alpine/edge/main \
-	libwebp && \
+	imagemagick@edge \
+	libwebp@edge && \
  apk add --no-cache \
-	--repository http://nl.alpinelinux.org/alpine/edge/community \
-	php7-gd && \
+	php7-gd@community \
+	php7-imagick@community && \
 
 # configure php
 echo "[www]" >> /etc/php7/php-fpm.conf && \
