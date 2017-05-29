@@ -1,25 +1,18 @@
-FROM lsiobase/alpine.nginx:3.5
-MAINTAINER Sparklyballs
+FROM lsiobase/alpine.nginx:3.6
+MAINTAINER sparklyballs
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-# add repositories
-RUN \
- echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
- echo "@community http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-
 # install packages
+RUN \
  apk add --no-cache \
-	ffmpeg && \
- apk add --no-cache \
-	imagemagick@edge \
-	libwebp@edge && \
- apk add --no-cache \
-	php7-gd@community \
-	php7-imagick@community && \
+	ffmpeg \
+	imagemagick \
+	php7-gd \
+	php7-imagick && \
 
 # configure php
 echo "[www]" >> /etc/php7/php-fpm.conf && \
