@@ -10,7 +10,7 @@ git clone https://github.com/thibaud-rohmer/PhotoShow.git /config/www/PhotoShow
 sed -i \
 	-e "s#$config->photos_dir.*#$config->photos_dir = \"/Pictures\";#g" \
 	-e "s#$config->ps_generated.*#$config->ps_generated  = \"/Thumbs\";#g" \
-	-e "s@\$config->timezone.*@\$config->timezone = \"${TZ}\"@g" \
+	-e "s#.*config->timezone.*#\$config->timezone = \"${TZ}\";#g" \
 /config/www/PhotoShow/config.php
 
 # patch in fixed keyboard.js file
