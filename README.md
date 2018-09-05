@@ -82,6 +82,7 @@ On first run create an admin account, any folder and its subfolders that you map
 
 ## Versions
 
++ **05.09.18:** Rebase to alpine 3.8.
 + **07.01.18:** Rebase to alpine 3.7.
 + **25.05.17:** Rebase to alpine 3.6.
 + **03.05.17:** Use repo pinning to better solve dependencies, use repo version of php7-imagick.
