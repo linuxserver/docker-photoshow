@@ -15,7 +15,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 # linuxserver/photoshow
 [![](https://images.microbadger.com/badges/version/linuxserver/photoshow.svg)](https://microbadger.com/images/linuxserver/photoshow "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/photoshow.svg)](https://microbadger.com/images/linuxserver/photoshow "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/photoshow.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/photoshow.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-photoshow)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-photoshow/)
 
-[Photoshow][appurl] is gallery software at its easiest, it doesn't even require a database. 
+[Photoshow][appurl] is gallery software at its easiest, it doesn't even require a database.
 
 [![photoshow](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/photoshow-icon.png)][appurl]
 
@@ -35,7 +35,7 @@ linuxserver/photoshow
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -62,9 +62,9 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
     uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
 ```
 
-## Setting up the application 
+## Setting up the application
 
-On first run create an admin account, any folder and its subfolders that you map to /Pictures will be presented as a webgallery. Config settings are persistent and stored as a subfolder of the /Thumbs mapping. 
+On first run create an admin account, any folder and its subfolders that you map to /Pictures will be presented as a webgallery. Config settings are persistent and stored as a subfolder of the /Thumbs mapping.
 
 
 ## Info
@@ -72,7 +72,7 @@ On first run create an admin account, any folder and its subfolders that you map
 * To monitor the logs of the container in realtime `docker logs -f photoshow`.
 
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' photoshow`
 
@@ -82,13 +82,14 @@ On first run create an admin account, any folder and its subfolders that you map
 
 ## Versions
 
++ **16.01.19:** Add pipeline logic and multi arch.
 + **05.09.18:** Rebase to alpine 3.8.
 + **07.01.18:** Rebase to alpine 3.7.
 + **25.05.17:** Rebase to alpine 3.6.
 + **03.05.17:** Use repo pinning to better solve dependencies, use repo version of php7-imagick.
 + **14.02.17:** Rebase to alpine 3.5.
 + **14.10.16:** Add version layer information.
-+ **30.09.16:** Rebase to alpine linux. 
-+ **11.09.16:** Add layer badges to README. 
++ **30.09.16:** Rebase to alpine linux.
++ **11.09.16:** Add layer badges to README.
 + **21.08.15:** Use patched keybaord js from fork of photoshow
-+ **21.08.15:** Initial Release. 
++ **21.08.15:** Initial Release.
