@@ -112,7 +112,7 @@ libmount libmount-2.32-r0
 glib glib-2.56.1-r0
 dbus-libs dbus-libs-1.10.24-r1
 avahi-libs avahi-libs-0.7-r1
-cups-libs cups-libs-2.2.6-r0
+cups-libs cups-libs-2.2.10-r0
 jbig2dec jbig2dec-0.14-r0
 tiff tiff-4.0.10-r0
 ghostscript ghostscript-9.26-r0
