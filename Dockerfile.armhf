@@ -15,6 +15,7 @@ RUN \
 	imagemagick \
 	jq \
 	php7-gd \
+	zip \
 	php7-imagick && \
  echo "**** Tag this image with current version ****" && \
  if [ -z ${PHOTOSHOW_COMMIT+x} ]; then \
