@@ -109,7 +109,7 @@ php7-7.3.6-r0
 php7-common-7.3.6-r0
 php7-fileinfo-7.3.6-r0
 php7-fpm-7.3.6-r0
-php7-gd-7.3.7-r0
+php7-gd-7.3.8-r0
 php7-json-7.3.6-r0
 php7-mbstring-7.3.6-r0
 php7-openssl-7.3.6-r0
