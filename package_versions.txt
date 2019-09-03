@@ -110,7 +110,7 @@ php7-7.3.8-r0
 php7-common-7.3.8-r0
 php7-fileinfo-7.3.8-r0
 php7-fpm-7.3.8-r0
-php7-gd-7.3.8-r0
+php7-gd-7.3.9-r0
 php7-json-7.3.8-r0
 php7-mbstring-7.3.8-r0
 php7-openssl-7.3.8-r0
@@ -127,7 +127,7 @@ sdl2-2.0.10-r0
 shadow-4.6-r2
 shared-mime-info-1.12-r0
 ssl_client-1.30.1-r2
-tiff-4.0.10-r0
+tiff-4.0.10-r1
 tzdata-2019a-r0
 unzip-6.0-r4
 v4l-utils-libs-1.16.6-r0
