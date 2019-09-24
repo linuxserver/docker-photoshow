@@ -16,7 +16,9 @@ RUN \
 	jq \
 	php7-gd \
 	zip \
-	php7-imagick && \
+	php7-imagick \
+	php7-exif \
+	fbida-exiftran && \
  echo "**** Tag this image with current version ****" && \
  if [ -z ${PHOTOSHOW_COMMIT+x} ]; then \
         PHOTOSHOW_COMMIT=$(curl -sX GET https://api.github.com/repos/thibaud-rohmer/PhotoShow/commits/master \
