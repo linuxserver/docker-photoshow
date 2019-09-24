@@ -11,14 +11,14 @@ RUN \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	curl \
+	fbida-exiftran \
 	ffmpeg \
 	imagemagick \
 	jq \
-	php7-gd \
-	zip \
-	php7-imagick \
 	php7-exif \
-	fbida-exiftran && \
+	php7-gd \
+	php7-imagick \
+	zip && \
  echo "**** Tag this image with current version ****" && \
  if [ -z ${PHOTOSHOW_COMMIT+x} ]; then \
         PHOTOSHOW_COMMIT=$(curl -sX GET https://api.github.com/repos/thibaud-rohmer/PhotoShow/commits/master \
