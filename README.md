@@ -114,6 +114,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-v /Pictures:ro` | Your local folder of photos you wish to share. |
 | `-v /Thumbs` | Local folder to store thumbnails of your images. |
 
+
 ## Environment variables from files (Docker secrets)
 
 You can set any environment variable from a file by using a special prepend `FILE__`. 
