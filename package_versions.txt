@@ -25,7 +25,7 @@ freetype-2.10.1-r0
 fribidi-1.0.8-r0
 gdk-pixbuf-2.40.0-r0
 ghostscript-9.50-r0
-git-2.24.1-r0
+git-2.24.2-r0
 glib-2.62.6-r0
 gmp-6.1.2-r1
 gnutls-3.6.10-r1
@@ -109,10 +109,10 @@ pcre-8.43-r0
 pcre2-10.34-r1
 php7-7.3.16-r0
 php7-common-7.3.16-r0
-php7-exif-7.3.16-r0
+php7-exif-7.3.17-r0
 php7-fileinfo-7.3.16-r0
 php7-fpm-7.3.16-r0
-php7-gd-7.3.16-r0
+php7-gd-7.3.17-r0
 php7-json-7.3.16-r0
 php7-mbstring-7.3.16-r0
 php7-openssl-7.3.16-r0
