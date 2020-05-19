@@ -50,7 +50,7 @@ libcurl-7.67.0-r0
 libde265-1.0.3-r0
 libdrm-2.4.100-r0
 libedit-20191211.3.1-r0
-libexif-0.6.21-r3
+libexif-0.6.22-r0
 libffi-3.2.1-r6
 libgcc-9.2.0-r4
 libheif-1.6.0-r0
@@ -109,10 +109,10 @@ pcre-8.43-r0
 pcre2-10.34-r1
 php7-7.3.17-r0
 php7-common-7.3.17-r0
-php7-exif-7.3.17-r0
+php7-exif-7.3.18-r0
 php7-fileinfo-7.3.17-r0
 php7-fpm-7.3.17-r0
-php7-gd-7.3.17-r0
+php7-gd-7.3.18-r0
 php7-json-7.3.17-r0
 php7-mbstring-7.3.17-r0
 php7-openssl-7.3.17-r0
