@@ -138,7 +138,7 @@ shared-mime-info-1.15-r0
 ssl_client-1.31.1-r19
 tiff-4.1.0-r0
 tzdata-2020a-r0
-unzip-6.0-r7
+unzip-6.0-r8
 v4l-utils-libs-1.20.0-r0
 wayland-libs-client-1.18.0-r4
 x264-libs-20191119-r1
