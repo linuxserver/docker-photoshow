@@ -114,10 +114,10 @@ pcre-8.44-r0
 pcre2-10.35-r0
 php7-7.3.25-r0
 php7-common-7.3.25-r0
-php7-exif-7.3.25-r0
+php7-exif-7.3.26-r0
 php7-fileinfo-7.3.25-r0
 php7-fpm-7.3.25-r0
-php7-gd-7.3.25-r0
+php7-gd-7.3.26-r0
 php7-json-7.3.25-r0
 php7-mbstring-7.3.25-r0
 php7-openssl-7.3.25-r0
