@@ -40,6 +40,7 @@ Find us at:
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fphotoshow%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/photoshow/latest/index.html)
 
 [Photoshow](https://github.com/thibaud-rohmer/PhotoShow) is gallery software at its easiest, it doesn't even require a database.
+
 [![photoshow](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/photoshow-icon.png)](https://github.com/thibaud-rohmer/PhotoShow)
 
 ## Supported Architectures
