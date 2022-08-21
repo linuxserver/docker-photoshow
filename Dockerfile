@@ -32,7 +32,7 @@ RUN \
   echo "php_admin_value[memory_limit] = 64M" >> /etc/php8/php-fpm.conf && \
   echo "php_admin_value[max_execution_time] = 15" >> /etc/php8/php-fpm.conf
 
-# add local files
+# copy local files
 COPY root/ /
 
 # ports and volumes
